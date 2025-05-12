@@ -73,7 +73,7 @@ const QueryForm = () => {
     if (!validateForm()) return;
     setIsSubmitting(true);
 
-    const token = "EAATRBKPW6F4BOZCTZCBvJT967qUZCx9mDZBL5iZC9txZBWVTO2879RPamrdFZCNXZAykZAd1gMeMosfZAE7IaEWSWHjz0d9FjWLo52Pq3h4Y0M2jOZCMoMZAqZAhAXKWICYXAe6s8AqfxB2pCgQKueZAfoWFlmhBeAdxUBeboc77kQUvWb0DWEngbyLDZBNbGIW7AZBRZCsd1OGDGFZCwaXWCH8jEj4t5HCinCk5UZDEAATRBKPW6F4BO9F3W6ZCpL96nAHKPrMAeoZCuNZBvpmgM0nyyjXGHv542f6rfzAqVvFeRaC1qqGTvqO4C9MrwzSTZADkKNfsK88rhGulKGtqJmhT571p6I11Tzt4FL8wsBTNGXGht4Fkp34JLWEUZBnZCHrgNAbzKql095a2CPspCMTz3mWKDnXv0EkW8NbaH3imeBXJDiv9pzulGcraqFKPb2chUHpZAiUtYNcZCBJd";
+    const token = "EAATRBKPW6F4BOyKBNNLX2PdrxgWTOHwFKwTZCrlqZAjEhSbPaCTJ5ZC69RYPyJKJwRhqerw9dya4MMZBRyce7I5qJChhccpcf0hJbaqVkr3Pb5qHVeX2tjr14qWZABlJfhPJKVsjZCravqe6dCf7zvk5Kr8jNny4FWbNVJQkfI00eKU5MRfxzqI0YzasEkD0n7lVRGLKhZCAvmYS8YJmK3u7K9e7kkZD";
     try {
       const response = await fetch(
         'https://graph.facebook.com/v22.0/667598549766490/messages',
