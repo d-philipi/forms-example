@@ -73,7 +73,7 @@ const QueryForm = () => {
     if (!validateForm()) return;
     setIsSubmitting(true);
 
-    const token = "EAATRBKPW6F4BOyKBNNLX2PdrxgWTOHwFKwTZCrlqZAjEhSbPaCTJ5ZC69RYPyJKJwRhqerw9dya4MMZBRyce7I5qJChhccpcf0hJbaqVkr3Pb5qHVeX2tjr14qWZABlJfhPJKVsjZCravqe6dCf7zvk5Kr8jNny4FWbNVJQkfI00eKU5MRfxzqI0YzasEkD0n7lVRGLKhZCAvmYS8YJmK3u7K9e7kkZD";
+    const token = "EAATRBKPW6F4BO6zZBZBn18ffyaaxXNxvxoMgMJ2bzMzZBIzjKqa5tHJKzjs2ii8YatORxteela6rNBRwaAwHNnfOmiAMGd0QjZAZCxVWnvLz4067SXWTprBQf7h2WQO3Vjhjd5TOUHY47iiDfv1ahEidKcQLTRgrklbpbAZAp3J7QF1xTxk8UCBqekRstXnK51aFCmHItndTg7fVbKcpr4vnZCVBUkY57d3GHOvXryaGioZD";
     try {
       const response = await fetch(
         'https://graph.facebook.com/v22.0/667598549766490/messages',
