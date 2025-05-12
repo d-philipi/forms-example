@@ -67,17 +67,59 @@ const QueryForm = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (validateForm()) {
-      setIsSubmitting(true);
+    if (!validateForm()) return;
+    setIsSubmitting(true);
 
-      // Simulate API call
-      setTimeout(() => {
-        setIsSubmitting(false);
-        setIsSubmitted(true);
-      }, 1500);
+    const token = "EAATRBKPW6F4BOZCTZCBvJT967qUZCx9mDZBL5iZC9txZBWVTO2879RPamrdFZCNXZAykZAd1gMeMosfZAE7IaEWSWHjz0d9FjWLo52Pq3h4Y0M2jOZCMoMZAqZAhAXKWICYXAe6s8AqfxB2pCgQKueZAfoWFlmhBeAdxUBeboc77kQUvWb0DWEngbyLDZBNbGIW7AZBRZCsd1OGDGFZCwaXWCH8jEj4t5HCinCk5UZDEAATRBKPW6F4BO9F3W6ZCpL96nAHKPrMAeoZCuNZBvpmgM0nyyjXGHv542f6rfzAqVvFeRaC1qqGTvqO4C9MrwzSTZADkKNfsK88rhGulKGtqJmhT571p6I11Tzt4FL8wsBTNGXGht4Fkp34JLWEUZBnZCHrgNAbzKql095a2CPspCMTz3mWKDnXv0EkW8NbaH3imeBXJDiv9pzulGcraqFKPb2chUHpZAiUtYNcZCBJd";
+    try {
+      const response = await fetch(
+        'https://graph.facebook.com/v22.0/667598549766490/messages',
+        {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            messaging_product: 'whatsapp',
+            to: '5521976864083',
+            type: 'template',
+            template: {
+              name: 'hello_world',
+              language: { code: 'en_US' },
+              components: [
+                {
+                  type: "body",
+                  parameters: [
+                    { type: "text", text: formState.name },
+                    { type: "text", text: formState.email },
+                    { type: "text", text: formState.phone },
+                    { type: "text", text: formState.category1 },
+                    { type: "text", text: formState.category2 },
+                    { type: "text", text: formState.message },
+                    { type: "text", text: formState.dominion },
+                    { type: "text", text: formState.idvisual },
+                    { type: "text", text: formState.hospedagem },
+                    { type: "text", text: formState.sustentacao }
+                  ]
+                }
+              ]
+            }
+          })
+        }
+      );
+
+      if (!response.ok) throw new Error('Falha no envio');
+
+      setIsSubmitted(true);
+    } catch (err) {
+      console.error(err);
+      alert('Ocorreu um erro ao enviar. Tente novamente mais tarde. Sinalize ao proprietário da página sobre o erro. Obrigado!');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -228,8 +270,8 @@ const QueryForm = () => {
 
         <FormInput
           label="Precisará de sustentação de aplicação?"
-          id="sustentação"
-          name="sustentação"
+          id="sustentacao"
+          name="sustentacao"
           type="text"
           value={formState.sustentacao}
           onChange={handleChange}
