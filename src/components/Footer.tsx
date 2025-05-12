@@ -32,7 +32,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Sobre nós</h3>
             <p className="mb-4 text-gray-400 leading-relaxed">
               Profissionais dedicados em entregas com excelência e praticidade. 
-              Nossso time se atenta na sua entrega contínua e conexão com o mercado.
+              Nosso time se atenta na sua entrega contínua e conexão com o mercado.
               Procuramos mostrar a cadência de evolução e caminhar junto com você.
             </p>
             <div className="flex items-center">

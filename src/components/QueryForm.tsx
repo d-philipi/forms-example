@@ -150,7 +150,7 @@ const QueryForm = () => {
           </div>
           <h2 className="text-2xl font-bold mb-2">Obrigado!</h2>
           <p className="text-gray-600 mb-6">
-            Sua requisição foi enviada com sucesso. Nó iremos retornar a você assim que possível.
+            Sua requisição foi enviada com sucesso. Nós iremos retornar a você assim que possível.
           </p>
           <button
             onClick={() => {
